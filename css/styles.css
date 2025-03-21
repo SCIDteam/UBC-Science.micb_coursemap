@@ -17,7 +17,7 @@
   .grid-container {
     display: grid;
     grid-template-columns: minmax(200px, 1fr) minmax(300px, 4fr);
-    grid-template-rows: auto 3fr auto;
+    grid-template-rows: auto 6fr auto;
     min-height: 100vh;
   }
   
