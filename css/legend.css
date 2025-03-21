@@ -1,0 +1,73 @@
+/* Footer styles */
+.footer {
+    grid-column: 1 / -1;
+    background-color: #2c3e50;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .legend-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .legend-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0.5rem;
+  }
+  
+  .legend-shape {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+  }
+  
+  .diamond {
+    transform: rotate(45deg);
+  }
+  
+  .rounded-rect {
+    border-radius: 7px;
+    width: 30px;
+  }
+  
+  .circle {
+    border-radius: 50%;
+  }
+  
+  .micb {
+    background-color: #EEDFCC;
+  }
+  
+  .non-micb {
+    background-color: #f0f0f0;
+  }
+  
+  .selected-theme {
+    background-color: red;
+  }
+  
+  .prerequisite {
+    background-color: cyan;
+  }
+  
+  .corequisite {
+    background-color: coral;
+  }
+  
+  .legend-item span {
+    font-size: 0.9rem;
+    color: white;
+  }  

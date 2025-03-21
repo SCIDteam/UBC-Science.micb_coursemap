@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- d3.js library -->
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <!-- dagreD3.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre-d3/0.6.4/dagre-d3.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MICB Courses</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/d3_styles.css">
+  <link rel="stylesheet" href="css/legend.css">
+
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">MICB Course Mapping</header>
+        <aside class="sidebar">
+            <span style="margin-bottom: 10px; display: block;"><strong>Display Extended Chain of Dependencies</strong></span>
+            <label class="switch">
+                <input type="checkbox" id="prerequisite-toggle">
+                <span class="slider round"></span>
+            </label>
+
+            <span style="margin-top: 20px; margin-bottom: 10px; display: block;"><strong>Themes</strong></span>
+            <div id="themes-container"></div>
+
+        </aside>
+        <main class="content">
+            <div id="graph-container">
+                <svg></svg>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="legend-container">
+              <div class="legend-row">
+                <div class="legend-item">
+                  <div class="legend-shape diamond micb"></div>
+                  <span>Lab Courses MICB</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-shape rounded-rect micb"></div>
+                  <span>Lecture Courses MICB</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-shape circle micb"></div>
+                  <span>Co-op Courses</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-shape rect non-micb"></div>
+                  <span>Non MICB Courses</span>
+                </div>
+              </div>
+              <div class="legend-row">
+                <div class="legend-item">
+                  <div class="legend-shape rect selected-theme"></div>
+                  <span>Courses with selected themes</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-shape rect prerequisite"></div>
+                  <span>Prerequisites</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-shape rect corequisite"></div>
+                  <span>Corequisites</span>
+                </div>
+              </div>
+            </div>
+          </footer>          
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

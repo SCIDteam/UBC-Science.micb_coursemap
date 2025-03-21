@@ -1,0 +1,39 @@
+.node {
+    stroke: black;
+    font-size: 1.2em;
+  }
+  
+  .edgePath path {
+    stroke: #333;
+    fill: none;
+    stroke-width: 1.5px;
+  }
+
+  /* Tooltip Styling */
+.tooltip {
+    position: absolute;
+    background-color: rgba(39, 19, 19, 0.75);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    max-width: 30vw;
+    pointer-events: none;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .tooltip .title {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .tooltip .body {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .tooltip .theme-footer {
+    margin-top: 5px;
+    font-size: 14px;
+  }

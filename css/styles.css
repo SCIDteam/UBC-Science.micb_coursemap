@@ -1,0 +1,168 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Grid container */
+  .grid-container {
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr) minmax(300px, 4fr);
+    grid-template-rows: auto 3fr auto;
+    min-height: 100vh;
+  }
+  
+  /* Header styles */
+  .header {
+    grid-column: 1 / -1;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    border-right: 1px solid #bdc3c7;
+    border-bottom: 2px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Content styles */
+  .content {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    overflow: hidden; /* Prevents scrollbars on content */
+  }
+  
+  /* Graph container */
+  #graph-container {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  #graph-contaniner > text {
+      font-weight: 300;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serf;
+      font-size: 14px;
+  }
+  
+  /* SVG styling */
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  
+    /* For very small screens */
+    @media (max-width: 600px) {
+        body::before {
+        content: "Please switch to a larger screen for better viewing experience.";
+        display: block;
+        background-color: #f39c12;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        }
+    
+        .grid-container {
+        margin-top: 40px; /* To account for the message */
+        }
+    }
+
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider (the toggle button) */
+.slider {
+  margin-top: 1;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Circle inside the slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Checked (toggle on) state */
+input:checked + .slider {
+  background-color: #4CAF50; /* Green when checked */
+}
+
+/* Move the circle to the right when checked */
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded slider */
+.slider.round {
+  border-radius: 24px;
+}
+
+/* Text beside the switch */
+.sidebar span {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Hover effect for text */
+.sidebar span:hover {
+  color: #4CAF50;
+}
+
+  
