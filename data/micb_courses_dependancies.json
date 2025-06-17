@@ -13,6 +13,15 @@
         "class_type": null
     },
     {
+        "course_code": "BIOT 280",
+        "course_title": "Introductory Biotechnology",
+        "description": "Block registration for the biotechnology, microbiology, physiology, communication for biotechnology, organic chemistry, information technology, plant anatomy, plant physiology and cell biology courses taken in the Joint BCIT/UBC Degree in Biotechnology.  Credit limited to students in the Joint Degree Program.",
+        "prerequisites": [],
+        "corequisites": [],
+        "themes": [],
+        "class_type": null
+    },
+    {
         "course_code": "CHEM 100",
         "course_title": "Foundations of Chemistry",
         "description": "Atomic and molecular properties, chemical reactions, bonding, nomenclature, kinetics, equilibrium processes, acids and bases, oxidation and reduction.  Intended for students who do not receive a satisfactory score on the UBC Chemistry Basic Skills Test, and need to establish a foundation of chemistry skills before proceeding to other first year chemistry courses. This course is not eligible for Credit/D/Fail grading. [3-0-1] Prerequisite: Not open to students with credit for Chemistry 12.  Permission of the department head.",
@@ -306,6 +315,17 @@
         "class_type": "Lecture"
     },
     {
+        "course_code": "MICB 305",
+        "course_title": "Data Science in Microbiology and Immunology Research",
+        "description": "A team-based data science research experience in microbiology and immunology. [3-0-1] Prerequisite: MICB_V 205 and 3rd-year class standing. This course is not eligible for Credit/D/Fail grading.",
+        "prerequisites": [
+            "MICB 205"
+        ],
+        "corequisites": [],
+        "themes": [],
+        "class_type": null
+    },
+    {
         "course_code": "MICB 306",
         "course_title": "Molecular Virology",
         "description": "Introduction to virus structure and replication. Detailed examination of selected viruses including polio, HIV and cancer-causing retroviruses. Development of vaccines and anti-viral drugs, the use of virus vectors to cure genetic diseases. [3-0-1] Prerequisite: One of MICB 212, MICB 202, BIOT 380.",
@@ -323,8 +343,17 @@
         "course_code": "MICB 322",
         "course_title": "Molecular Microbiology Laboratory",
         "description": "Aseptic handling and characterization of microbes, growth properties, enzyme assays, protein analysis and plasmid isolation. Restricted to students in Microbiology and Immunology specializations. [2-4-0] Prerequisites:  MICB 211 (or 201).Co-requisites:  All of BIOL 200, BIOL 201 (or BIOC 202 or 203), CHEM 233, and MICB 212 (or 202).",
-        "prerequisites": [],
-        "corequisites": [],
+        "prerequisites": [
+            "MICB 211"
+        ],
+        "corequisites": [
+            "BIOL 200",
+            "BIOL 201",
+            "BIOC 202",
+            "BIOC 203",
+            "CHEM 233",
+            "MICB 212"
+        ],
         "themes": [
             "Data Science",
             "Microbiology"
@@ -477,7 +506,9 @@
         "course_code": "MICB 407",
         "course_title": "Viral Infections in Humans.",
         "description": "Interactions between viruses and humans; pathogenesis; persistence and viral oncogenesis; virological diagnosis and treatment. (Consult the Credit Exclusion list within the Faculty of Science section of the Calendar.) [3-0-0] Prerequisite: MICB306",
-        "prerequisites": [],
+        "prerequisites": [
+            "MICB 306"
+        ],
         "corequisites": [],
         "themes": [
             "Virology",
@@ -555,23 +586,6 @@
         "description": "A team-based laboratory research experience in microbiology and immunology. [2-4-0] Prerequisite: One of MICB 323, BIOT 380.",
         "prerequisites": [
             "MICB 323",
-            "BIOT 380"
-        ],
-        "corequisites": [],
-        "themes": [
-            "Data Science",
-            "Microbiology"
-        ],
-        "class_type": "Lab"
-    },
-    {
-        "course_code": "MICB 475",
-        "course_title": "Data Science Research in Microbiology and Immunology",
-        "description": "A team-based data science research experience in microbiology and immunology. [3-0-0] Prerequisite: Either (a) MICB 322 and one of MICB 325, BIOL 335;  or (b) BIOT 380.",
-        "prerequisites": [
-            "MICB 322",
-            "MICB 325",
-            "BIOL 335",
             "BIOT 380"
         ],
         "corequisites": [],
