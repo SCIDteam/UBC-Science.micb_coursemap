@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MICB Course Data Change Log</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { color: #2c3e50; }
+    .log-entry { margin-bottom: 1em; }
+    .timestamp { color: gray; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+  <h2>MICB Course Data Change Log</h2>
+  <div id="log-container"></div>
+
+  <script>
+    const logs = [
+      {
+        date: "2025-06-17",
+        file: "all_courses_py.json",
+        action: "manually Removed MICB 475 from the list of courses.---- DONE"
+      },
+      {
+        date: "2025-06-17",
+        file: "all_courses_py.json",
+        action: "manually Added MICB 305 with prerequisite MICB 205.--- DONE"
+      },
+      {
+        date: "2025-06-17",
+        file: "all_courses_py.json",
+        action: "manually added prereqs AND coreqs to MICB 322",
+        details: "only added MICB 211 (from one of MICB 211 OR MICB 201) and MICB 212 (from one of MICB 212 OR MICB 202)----- DONE"
+      },
+      {
+        date: "2025-06-17",
+        file: "all_courses_py.json",
+        action: "manually Amended MICB 407 to have prerequisite MICB 306.-----DONE "
+      },
+      {
+        date: "2025-06-17",
+        file: "micb_courses_dependancies.json",
+        action: "manually added BIOT 280.-----DONE"
+      },
+      {
+        date: "2025-06-17",
+        file: "script.js & index.html",
+        action: "added core courses code with toggle button option"
+      }
+
+    ];
+
+    const container = document.getElementById("log-container");
+    logs.forEach(log => {
+      const div = document.createElement("div");
+      div.className = "log-entry";
+      div.innerHTML = `
+        <div><strong>Date:</strong> ${log.date}</div>
+        <div><strong>File:</strong> ${log.file}</div>
+        <div><strong>Action:</strong> ${log.action}</div>
+        <div class="timestamp"><em>${log.details}</em></div>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>
