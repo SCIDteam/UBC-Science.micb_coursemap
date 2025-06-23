@@ -151,6 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Make the hovered node bold and full opacity
                     d3.select(this).select("rect, circle, diamond").style("fill", function (d) {
                         if (selectedThemes.size === 0) {
+                            if (showCoreHighlight && coreCourses.has(course.course_code)) {
+                                return "#ffcc00";
+                            }
                             return d.startsWith("MICB") ? "#EEDFCC" : "#f0f0f0";
                         } else {
                             // If themes are selected, keep the current fill color
@@ -219,6 +222,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     // Reset hovered node style
                     d3.select(this).select("rect, circle, diamond").style("fill", function (d) {
                         if (selectedThemes.size === 0) {
+                            if (showCoreHighlight && coreCourses.has(course.course_code)) {
+                                return "#ffcc00";
+                            }
                             return d.startsWith("MICB") ? "#EEDFCC" : "#f0f0f0";
                         } else {
                             // If themes are selected, keep the current fill color
@@ -237,6 +243,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         course.prerequisites.forEach(function (prereq) {
                             inner.select(`g.node[id="${prereq}"]`).select("rect, circle, polygon").style("fill", function (d) {
                                 if (selectedThemes.size === 0) {
+                                    if (showCoreHighlight && coreCourses.has(prereq)) {
+                                        return "#ffcc00";
+                                    }
                                     return d.startsWith("MICB") ? "#EEDFCC" : "#f0f0f0";
                                 } else {
                                     // Find the full course data for this prerequisite
@@ -246,8 +255,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                     const hasSelectedTheme = prereqCourse && prereqCourse.themes.some(theme => selectedThemes.has(theme));
 
                                     if (hasSelectedTheme) {
-                                        return "red";
+                                        return "#7FFFD4";
                                     } else {
+                                        if (showCoreHighlight && coreCourses.has(prereq)) {
+                                            return "#ffcc00";
+                                        }
                                         return d.startsWith("MICB") ? "#EEDFCC" : "#f0f0f0";
                                     }
                                 }
@@ -263,6 +275,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         course.corequisites.forEach(function (coreq) {
                             inner.select(`g.node[id="${coreq}"]`).select("rect, circle, polygon").style("fill", function (d) {
                                 if (selectedThemes.size === 0) {
+                                    if (showCoreHighlight && coreCourses.has(coreq)) {
+                                        return "#ffcc00";
+                                    }
                                     return d.startsWith("MICB") ? "#EEDFCC" : "#f0f0f0";
                                 } else {
                                     // Find the full course data for this prerequisite
@@ -272,8 +287,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                     const hasSelectedTheme = coreqCourse && coreqCourse.themes.some(theme => selectedThemes.has(theme));
 
                                     if (hasSelectedTheme) {
-                                        return "red";
+                                        return "#7FFFD4";
                                     } else {
+                                        if (showCoreHighlight && coreCourses.has(prereq)) {
+                                            return "#ffcc00";
+                                        }
                                         return d.startsWith("MICB") ? "#EEDFCC" : "#f0f0f0";
                                     }
                                 }
@@ -351,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
             function getNodeFillColor(course, isThemeSelected = false) {
-                if (isThemeSelected) return "red";                         // Theme filter
+                if (isThemeSelected) return "#7FFFD4";                         // Theme filter
                 if (showCoreHighlight && coreCourses.has(course.course_code)) return "#ffcc00"; // Core course
                 if (course.class_type === "Lab") return "#e6ccb2";
                 if (course.class_type === "Lecture") return "#d6cfc7";
@@ -371,7 +389,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         id: nodeId,
                         shape: determineShape(full_course),
                         style: isSelectedThemeCourse
-                            ? 'fill: red;'
+                            ? 'fill: #7FFFD4;'
                             : (showCoreHighlight && coreCourses.has(nodeId)
                                 ? 'fill: #ffcc00;'
                                 : (nodeId.startsWith('MICB') ? 'fill: #EEDFCC;' : 'fill: #f0f0f0;')),
