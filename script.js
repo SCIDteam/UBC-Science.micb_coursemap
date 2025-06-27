@@ -139,6 +139,30 @@ function renderGraph(courseIds, coursesData) {
     svg.call(zoom);
 
     const render = new dagreD3.render();
+
+    // Hexagon shape
+    render.shapes().hexagon = function (parent, bbox, node) {
+        const w = bbox.width;
+        const h = bbox.height;
+
+        const points = [
+            { x: w / 4,  y:  0       },  // left-top
+            { x: (3 * w) / 4, y:  0  },  // right-top
+            { x: w,      y: -h / 2   },  // right-mid
+            { x: (3 * w) / 4, y: -h  },  // right-bottom
+            { x: w / 4,  y: -h       },  // left-bottom
+            { x: 0,      y: -h / 2   }   // left-mid
+        ];
+
+        const shapeSvg = parent.insert("polygon", ":first-child")
+            .attr("points", points.map(p => `${p.x},${p.y}`).join(" "))
+            .attr("transform", `translate(${-w / 2},${h / 2})`);
+
+        node.intersect = point => dagreD3.intersect.polygon(node, points, point);
+
+        return shapeSvg;
+    };
+
     render(inner, g);
 
     const offsetX = (svg.attr('width') - g.graph().width) / 10 + 350;
@@ -173,7 +197,7 @@ function renderGraph(courseIds, coursesData) {
                 const currentCourse = coursesData.find(c => c.course_code === d);
                 const hasSelected = currentCourse && currentCourse.themes.some(t => selectedThemes.has(t));
                 if (hasSelected) {
-                    return '#7FFFD4';
+                    return '#9966cc';
                 }
                 if (showCoreHighlight && coreCourses.has(d)) {
                     return '#ffcc00';
@@ -254,7 +278,7 @@ function renderGraph(courseIds, coursesData) {
                         const prereqCourse = coursesData.find(c => c.course_code === prereq);
                         const hasSelected = prereqCourse && prereqCourse.themes.some(t => selectedThemes.has(t));
                         if (hasSelected) {
-                            return '#7FFFD4';
+                            return '#9966cc';
                         }
                         if (showCoreHighlight && coreCourses.has(prereq)) {
                             return '#ffcc00';
@@ -279,7 +303,7 @@ function renderGraph(courseIds, coursesData) {
                         const coreqCourse = coursesData.find(c => c.course_code === coreq);
                         const hasSelected = coreqCourse && coreqCourse.themes.some(t => selectedThemes.has(t));
                         if (hasSelected) {
-                            return '#7FFFD4';
+                            return '#9966cc';
                         }
                         if (showCoreHighlight && coreCourses.has(coreq)) {
                             return '#ffcc00';
@@ -306,7 +330,7 @@ function addNodeIfNotExists(nodeId, addedNodes, themeCourses) {
             id: nodeId,
             shape: determineShape(full_course),
             style: isThemeCourse
-                ? 'fill: #7FFFD4;'
+                ? 'fill: #9966cc'
                 : (showCoreHighlight && coreCourses.has(nodeId)
                     ? 'fill: #ffcc00;'
                     : (nodeId.startsWith('MICB') ? 'fill: #EEDFCC;' : 'fill: #f0f0f0;')),
@@ -336,5 +360,5 @@ function addEdge(source, target, type) {
 function determineShape(course) {
     if (course.class_type === 'Lab') return 'diamond';
     if (course.class_type === 'Lecture') return 'rect';
-    if (course.course_title.includes('Co-operative')) return 'circle';
+    if (course.course_title.includes('Co-operative')) return 'hexagon';
 }
