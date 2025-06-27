@@ -31,19 +31,6 @@
         "class_type": null
     },
     {
-        "course_code": "MICB 203",
-        "course_title": "Basic Microbiology Laboratory",
-        "description": "Procedures and principles associated with isolation, characterization and handling of microorganisms. Intended for students requiring a basic microbiology laboratory course. [1*-3-1*] Prerequisite: One of BIOL 112, SCIE 001.",
-        "prerequisites": [
-            "BIOL 112"
-        ],
-        "corequisites": [],
-        "themes": [
-            "Microbiology"
-        ],
-        "class_type": "Lab"
-    },
-    {
         "course_code": "CHEM 111",
         "course_title": "Structure, Bonding, and Equilibrium in Chemistry",
         "description": "Fundamentals of bonding theories, structural chemistry and equilibrium with applications relevant to modern society. [3-3-1] Prerequisite: Not open to students with credit for CHEM 12. A satisfactory score on the UBC Chemistry Basic Skills Test.",
@@ -323,7 +310,7 @@
         ],
         "corequisites": [],
         "themes": [],
-        "class_type": null
+        "class_type": "Lecture"
     },
     {
         "course_code": "MICB 306",
@@ -660,20 +647,6 @@
             "Human Health"
         ],
         "class_type": "Lecture"
-    },
-    {
-        "course_code": "MICB 353",
-        "course_title": "Food Microbiology Laboratory",
-        "description": "Procedures and principles associated with isolation, enumeration, characterization and handling of microorganisms. Restricted to students registered in the Food Science program. [1-2-0] Prerequisite: One of BIOL 112, MICB 211, MICB 201, SCIE 001.",
-        "prerequisites": [
-            "BIOL 112",
-            "MICB 211"
-        ],
-        "corequisites": [],
-        "themes": [
-            "Microbiology"
-        ],
-        "class_type": "Lab"
     },
     {
         "course_code": "MICB 404",

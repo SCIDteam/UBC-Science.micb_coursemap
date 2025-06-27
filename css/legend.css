@@ -37,12 +37,16 @@
   }
   
   .rounded-rect {
-    border-radius: 7px;
+    border-radius: 100px;
     width: 30px;
   }
   
-  .circle {
-    border-radius: 50%;
+  .hexagon {
+    width: 30px;
+    clip-path: polygon(
+      25% 0%, 75% 0%, 100% 50%,
+      75% 100%, 25% 100%, 0% 50%
+    );
   }
   
   .micb {
@@ -54,7 +58,7 @@
   }
   
   .selected-theme {
-    background-color: #7FFFD4;
+    background-color: #9966cc;
   }
   
   .prerequisite {
