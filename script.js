@@ -61,13 +61,11 @@ function setupThemeFilters(coursesData) {
 
     [...allThemes].forEach((theme, index) => {
         const themeElement = document.createElement('div');
-        themeElement.style.display = 'flex';
-        themeElement.style.alignItems = 'center';
-        themeElement.style.marginBottom = '10px';
+        themeElement.className = 'theme-option';
 
         const themeText = document.createElement('span');
         themeText.textContent = theme;
-        themeText.style.marginRight = '10px';
+        themeText.className = 'theme-text';
 
         const switchLabel = document.createElement('label');
         switchLabel.className = 'switch';
@@ -369,7 +367,7 @@ function addNodeIfNotExists(nodeId, addedNodes, themeCourses) {
                 g.setNode(clusterId, {
                     label: '',
                     shape: 'rect',
-                    style: 'fill: white;'
+                    class: 'cluster'
                 });
             }
             
@@ -383,7 +381,7 @@ function addNodeIfNotExists(nodeId, addedNodes, themeCourses) {
                     g.setNode(fullSubClusterId, {
                         label: '',
                         shape: 'rect',
-                        style: 'fill: white;'
+                        class: 'cluster'
                     });
                     
                     // Assign sub-cluster to main cluster
@@ -400,7 +398,7 @@ function addNodeIfNotExists(nodeId, addedNodes, themeCourses) {
                         g.setNode(fullSubSubClusterId, {
                             label: '',
                             shape: 'rect',
-                            style: 'fill: white;'
+                            class: 'cluster'
                         });
                         
                         // Assign sub-sub-cluster to sub-cluster
@@ -421,15 +419,12 @@ function addNodeIfNotExists(nodeId, addedNodes, themeCourses) {
 }
 
 function addEdge(source, target, type) {
-    const edgeStyle = type === 'corequisite'
-        ? { style: 'stroke: coral; stroke-dasharray: 5, 5;', arrowheadStyle: 'fill: coral' }
-        : { arrowheadStyle: 'fill: #000' };
-
+    const edgeClass = type === 'corequisite' ? 'corequisite-edge' : undefined;
     g.setEdge(source, target, {
         label: '',
         id: `${source}-${target}`,
         curve: d3.curveBasis,
-        ...edgeStyle
+        class: edgeClass
     });
 }
 
@@ -450,7 +445,7 @@ function addCustomFakeEdges() {
         if (g.hasNode(fromCourse) && g.hasNode(toCourse)) {
             if (!g.hasEdge(fromCourse, toCourse)) {
                 g.setEdge(fromCourse, toCourse, {
-                    style: 'opacity: 0; stroke: green',
+                    class: 'fake-edge',
                     weight: 0.5
                 });
             }
