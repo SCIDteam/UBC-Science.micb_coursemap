@@ -37,3 +37,21 @@
     margin-top: 5px;
     font-size: 14px;
   }
+.cluster rect {
+    fill: white;
+}
+
+.edgePath.corequisite-edge path {
+    stroke: coral;
+    stroke-dasharray: 5, 5;
+}
+.edgePath.corequisite-edge polygon {
+    fill: coral;
+}
+
+.edgePath.fake-edge path {
+    stroke: green;
+    opacity: 0;
+}
+
+

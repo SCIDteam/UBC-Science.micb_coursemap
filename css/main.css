@@ -1,0 +1,75 @@
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(600px, 4fr);
+  grid-template-rows: auto 6fr auto;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+/* Content styles */
+.content {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+              rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  overflow: hidden;
+}
+
+/* Graph container */
+#graph-container {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#graph-contaniner > text {
+  font-weight: 300;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* SVG styling */
+svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* For very small screens */
+@media (max-width: 900px) {
+  body::before {
+    content: "Please switch to a larger screen for better viewing experience.";
+    display: block;
+    background-color: #f39c12;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .grid-container {
+    margin-top: 40px; /* To account for the message */
+  }
+}
+
