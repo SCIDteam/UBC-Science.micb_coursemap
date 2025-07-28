@@ -16,9 +16,10 @@
   /* Grid container */
   .grid-container {
     display: grid;
-    grid-template-columns: minmax(200px, 1fr) minmax(300px, 4fr);
+    grid-template-columns: minmax(300px, 1fr) minmax(600px, 4fr);
     grid-template-rows: auto 6fr auto;
     min-height: 100vh;
+    max-height: 100vh;
   }
   
   /* Header styles */
@@ -34,7 +35,7 @@
   /* Sidebar styles */
   .sidebar {
     background-color: #ecf0f1;
-    padding: 1rem;
+    padding: 0 0.0 1rem 0.0;
     border-right: 1px solid #bdc3c7;
     border-bottom: 2px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -72,7 +73,7 @@
   
   
     /* For very small screens */
-    @media (max-width: 600px) {
+    @media (max-width: 900px) {
         body::before {
         content: "Please switch to a larger screen for better viewing experience.";
         display: block;
@@ -152,7 +153,7 @@ input:checked + .slider:before {
 
 /* Text beside the switch */
 .sidebar span {
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
   font-weight: 500;
   line-height: 24px;

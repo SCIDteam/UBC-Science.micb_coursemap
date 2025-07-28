@@ -1,5 +1,21 @@
 [
     {
+        "course_code": "CHEM 100",
+        "course_title": "Foundations of Chemistry",
+        "description": "Atomic and molecular properties, chemical reactions, bonding, nomenclature, kinetics, equilibrium processes, acids and bases, oxidation and reduction.  Intended for students who do not receive a satisfactory score on the UBC Chemistry Basic Skills Test, and need to establish a foundation of chemistry skills before proceeding to other first year chemistry courses. This course is not eligible for Credit/D/Fail grading. [3-0-1] Prerequisite: Not open to students with credit for Chemistry 12.  Permission of the department head.",
+        "prerequisites": [],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "BIOL 111",
+        "course_title": "Introduction to Modern Biology",
+        "description": "Concepts fundamental to biological issues, such as the genetic basis of biological variation, evolution, infectious diseases, causes of cancer, population growth, and human effects on ecosystems.  Not open to students who have credit for Biology 12 (including AP, IB). [3-0-0]",
+        "prerequisites": [],
+        "corequisites": [],
+        "themes": []
+    },
+    {
         "course_code": "BIOL 112",
         "course_title": "Biology of the Cell",
         "description": "The principles of cellular and molecular biology using bacterial and eukaryotic examples. [3-0-0] Prerequisite: One of CHEM 12, CHEM 100, CHEM 110, CHEM 111 and one of BIOL 11, BIOL 12, BIOL 111.",
@@ -12,9 +28,9 @@
         "themes": []
     },
     {
-        "course_code": "CHEM 100",
-        "course_title": "Foundations of Chemistry",
-        "description": "Atomic and molecular properties, chemical reactions, bonding, nomenclature, kinetics, equilibrium processes, acids and bases, oxidation and reduction.  Intended for students who do not receive a satisfactory score on the UBC Chemistry Basic Skills Test, and need to establish a foundation of chemistry skills before proceeding to other first year chemistry courses. This course is not eligible for Credit/D/Fail grading. [3-0-1] Prerequisite: Not open to students with credit for Chemistry 12.  Permission of the department head.",
+        "course_code": "CHEM 111",
+        "course_title": "Structure, Bonding, and Equilibrium in Chemistry",
+        "description": "Fundamentals of bonding theories, structural chemistry and equilibrium with applications relevant to modern society. [3-3-1] Prerequisite: Not open to students with credit for CHEM 12. A satisfactory score on the UBC Chemistry Basic Skills Test.",
         "prerequisites": [],
         "corequisites": [],
         "themes": []
@@ -30,18 +46,22 @@
         "themes": []
     },
     {
-        "course_code": "CHEM 111",
-        "course_title": "Structure, Bonding, and Equilibrium in Chemistry",
-        "description": "Fundamentals of bonding theories, structural chemistry and equilibrium with applications relevant to modern society. [3-3-1] Prerequisite: Not open to students with credit for CHEM 12. A satisfactory score on the UBC Chemistry Basic Skills Test.",
-        "prerequisites": [],
+        "course_code": "CHEM 121",
+        "course_title": "Structure and Bonding in Chemistry",
+        "description": "Fundamentals of bonding theories and structural chemistry, with applications relevant to modern society. [3-3-0] Prerequisite: One of CHEM 12, CHEM 100. Equivalency: CHEM141",
+        "prerequisites": [
+            "CHEM 100"
+        ],
         "corequisites": [],
         "themes": []
     },
     {
-        "course_code": "BIOL 111",
-        "course_title": "Introduction to Modern Biology",
-        "description": "Concepts fundamental to biological issues, such as the genetic basis of biological variation, evolution, infectious diseases, causes of cancer, population growth, and human effects on ecosystems.  Not open to students who have credit for Biology 12 (including AP, IB). [3-0-0]",
-        "prerequisites": [],
+        "course_code": "CHEM 141",
+        "course_title": "Chemical Bonding, Molecular Structure and Properties for Lab Sciences",
+        "description": "Bonding theories, their predictions, experimental tests, and consequences regarding chemical structure and observable properties. Applications relevant to modern society are emphasized. For students interested in lab-focused sciences such as Chemistry, Physics, Biochemistry, Microbiology and related disciplines. Restricted to students in the Faculty of Science. [3-3-0] Prerequisite: One of CHEM 12, CHEM 100. Equivalency: CHEM121",
+        "prerequisites": [
+            "CHEM 100"
+        ],
         "corequisites": [],
         "themes": []
     },
@@ -70,32 +90,12 @@
         "themes": []
     },
     {
-        "course_code": "CHEM 121",
-        "course_title": "Structure and Bonding in Chemistry",
-        "description": "Fundamentals of bonding theories and structural chemistry, with applications relevant to modern society. [3-3-0] Prerequisite: One of CHEM 12, CHEM 100. Equivalency: CHEM141",
-        "prerequisites": [
-            "CHEM 100"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
         "course_code": "BIOL 200",
         "course_title": "Fundamentals of Cell Biology",
         "description": "Structure and function of plant and animal cells; membrane models, cytoplasmic organelles, biological information from gene to protein, the endomembrane system, secretion, intracellular digestion, endocytosis, transport processes, cytoskeleton and cell motility. [3-0-1] Prerequisite: Either (a) BIOL 112 and one of CHEM 123, CHEM 130;  or (b) SCIE 001. or (c) 8 transfer credits of first-year BIOL and 6 credits of first-year CHEM or (d) one of BIOL 112 or BIOL 121 and a corequisite of one of CHEM 203 or CHEM 223.",
         "prerequisites": [
             "BIOL 112",
             "CHEM 123"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "CHEM 141",
-        "course_title": "Chemical Bonding, Molecular Structure and Properties for Lab Sciences",
-        "description": "Bonding theories, their predictions, experimental tests, and consequences regarding chemical structure and observable properties. Applications relevant to modern society are emphasized. For students interested in lab-focused sciences such as Chemistry, Physics, Biochemistry, Microbiology and related disciplines. Restricted to students in the Faculty of Science. [3-3-0] Prerequisite: One of CHEM 12, CHEM 100. Equivalency: CHEM121",
-        "prerequisites": [
-            "CHEM 100"
         ],
         "corequisites": [],
         "themes": []
@@ -112,13 +112,62 @@
         "themes": []
     },
     {
-        "course_code": "BIOL 201",
-        "course_title": "Introduction to Biochemistry",
-        "description": "Biological molecules, protein structure and enzyme action, energy transfer, central metabolic pathways and their regulation. Examples drawn from plants, animals and microorganisms. (Consult the Credit Exclusion list within the Faculty of Science section of the Calendar.) Credit will be granted for only one of BIOL 201, BIOC 202, or BIOC 203. [3-0-1] Prerequisite: BIOL 200 and one of CHEM 233, CHEM 260. ; or BIOL 200 and a corequisite of CHEM 213; or a corequisite of either CHEM 313 or CHEM 330.",
+        "course_code": "CHEM 115",
+        "course_title": "Introductory Chemical Laboratory I",
+        "description": "An introduction to the principles and techniques of the chemistry laboratory. [0-3-0] Prerequisite: One of CHEM 110, CHEM 120.",
+        "prerequisites": [],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "CHEM 203",
+        "course_title": "Introduction to Organic Chemistry",
+        "description": "Structure, bonding and physical properties of aliphatic and aromatic compounds; mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-heteroatom bond formation; functional group interconversion and oxidation/reduction reactions. Only open to students in Chemistry or Biochemistry specializations. Credit will be granted for only one of CHEM 203 or CHEM 223, CHEM 225 or CHEM 233, 235. [3-3-0] Prerequisite: Either (a) CHEM 123 or (b) all of CHEM 130, CHEM 135 or (c) SCIE 001.",
         "prerequisites": [
-            "BIOL 200",
-            "CHEM 233",
-            "CHEM 260"
+            "CHEM 123",
+            "CHEM 135"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "BIOT 380",
+        "course_title": "Advanced Biotechnology",
+        "description": "Block registration for the microbiology, molecular genetics, biochemistry, management and regulatory affairs, process systems, analytical chemistry and communication courses taken in the BCIT/UBC Joint Degree in Biotechnology.  Credit limited to students in the Joint Degree Program.",
+        "prerequisites": [],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "CHEM 233",
+        "course_title": "Organic Chemistry for the Biological Sciences",
+        "description": "Reactions and properties of carbonyl compounds, carbohydrates, amino acids, nucleic acids. Credit will be granted for only one of CHEM 233 or CHEM 203 or CHEM 223. [3-0-0] Prerequisite: One of CHEM 123, CHEM 130, SCIE 001.",
+        "prerequisites": [
+            "CHEM 123"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "CHEM 223",
+        "course_title": "Introduction to Organic Chemistry (Lecture)",
+        "description": "Structure, bonding and physical properties of aliphatic and aromatic compounds; mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-heteroatom bond formation; functional group interconversion and oxidation/reduction reactions. Only open to students in Chemistry or Biochemistry specializations. Students should consult the Credit Exclusion List for credit exclusions relating to second-year organic chemistry courses. [3-0-0] Prerequisite: One of CHEM 123, CHEM 130, SCIE 001.",
+        "prerequisites": [
+            "CHEM 123"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "MICB 301",
+        "course_title": "Microbial Ecophysiology",
+        "description": "Dynamics and control of prokaryotic cellular processes in response to the biotic and abiotic environment including metabolic interactions and metabolic cooperation between microorganisms. [3-0-1] Prerequisite: Either (a) one of MICB 211, MICB 201 and one of BIOL 201, BIOC 202, BIOC 203;  or (b) BIOT 380.",
+        "prerequisites": [
+            "MICB 211",
+            "BIOL 201",
+            "BIOC 202",
+            "BIOC 203",
+            "BIOT 380"
         ],
         "corequisites": [],
         "themes": []
@@ -138,23 +187,14 @@
         "themes": []
     },
     {
-        "course_code": "CHEM 135",
-        "course_title": "Introductory Chemical Laboratory II",
-        "description": "An introduction to the principles and techniques of the chemistry laboratory. [0-3-0] Prerequisite: One of CHEM 111, CHEM 115, CHEM 121, CHEM 141.",
+        "course_code": "CHEM 213",
+        "course_title": "Organic Chemistry",
+        "description": "Spectroscopy of organic compounds.  Mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-carbon bond formation; functional group interconversion.  Preference will be given to students in Chemistry or Biochemistry specializations. [3-0-0] Prerequisite: Either (a) one of CHEM 203, CHEM 223 or (b) a score of 76% or higher in CHEM 233.",
         "prerequisites": [
-            "CHEM 111",
-            "CHEM 115",
-            "CHEM 121",
-            "CHEM 141"
+            "CHEM 203",
+            "CHEM 223",
+            "CHEM 233"
         ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "CHEM 115",
-        "course_title": "Introductory Chemical Laboratory I",
-        "description": "An introduction to the principles and techniques of the chemistry laboratory. [0-3-0] Prerequisite: One of CHEM 110, CHEM 120.",
-        "prerequisites": [],
         "corequisites": [],
         "themes": []
     },
@@ -171,40 +211,6 @@
         "themes": []
     },
     {
-        "course_code": "CHEM 213",
-        "course_title": "Organic Chemistry",
-        "description": "Spectroscopy of organic compounds.  Mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-carbon bond formation; functional group interconversion.  Preference will be given to students in Chemistry or Biochemistry specializations. [3-0-0] Prerequisite: Either (a) one of CHEM 203, CHEM 223 or (b) a score of 76% or higher in CHEM 233.",
-        "prerequisites": [
-            "CHEM 203",
-            "CHEM 223",
-            "CHEM 233"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "BIOT 380",
-        "course_title": "Advanced Biotechnology",
-        "description": "Block registration for the microbiology, molecular genetics, biochemistry, management and regulatory affairs, process systems, analytical chemistry and communication courses taken in the BCIT/UBC Joint Degree in Biotechnology.  Credit limited to students in the Joint Degree Program.",
-        "prerequisites": [],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "MICB 301",
-        "course_title": "Microbial Ecophysiology",
-        "description": "Dynamics and control of prokaryotic cellular processes in response to the biotic and abiotic environment including metabolic interactions and metabolic cooperation between microorganisms. [3-0-1] Prerequisite: Either (a) one of MICB 211, MICB 201 and one of BIOL 201, BIOC 202, BIOC 203;  or (b) BIOT 380.",
-        "prerequisites": [
-            "MICB 211",
-            "BIOL 201",
-            "BIOC 202",
-            "BIOC 203",
-            "BIOT 380"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
         "course_code": "CHEM 260",
         "course_title": "Organic Chemistry for Engineers",
         "description": "A description of the properties and reactions of organic compounds. [3-0-0] Prerequisite: One of CHEM 123, CHEM 130, CHEM 154, SCIE 001.",
@@ -216,22 +222,26 @@
         "themes": []
     },
     {
-        "course_code": "CHEM 203",
-        "course_title": "Introduction to Organic Chemistry",
-        "description": "Structure, bonding and physical properties of aliphatic and aromatic compounds; mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-heteroatom bond formation; functional group interconversion and oxidation/reduction reactions. Only open to students in Chemistry or Biochemistry specializations. Credit will be granted for only one of CHEM 203 or CHEM 223, CHEM 225 or CHEM 233, 235. [3-3-0] Prerequisite: Either (a) CHEM 123 or (b) all of CHEM 130, CHEM 135 or (c) SCIE 001.",
+        "course_code": "BIOL 201",
+        "course_title": "Introduction to Biochemistry",
+        "description": "Biological molecules, protein structure and enzyme action, energy transfer, central metabolic pathways and their regulation. Examples drawn from plants, animals and microorganisms. (Consult the Credit Exclusion list within the Faculty of Science section of the Calendar.) Credit will be granted for only one of BIOL 201, BIOC 202, or BIOC 203. [3-0-1] Prerequisite: BIOL 200 and one of CHEM 233, CHEM 260. ; or BIOL 200 and a corequisite of CHEM 213; or a corequisite of either CHEM 313 or CHEM 330.",
         "prerequisites": [
-            "CHEM 123",
-            "CHEM 135"
+            "BIOL 200",
+            "CHEM 233",
+            "CHEM 260"
         ],
         "corequisites": [],
         "themes": []
     },
     {
-        "course_code": "CHEM 233",
-        "course_title": "Organic Chemistry for the Biological Sciences",
-        "description": "Reactions and properties of carbonyl compounds, carbohydrates, amino acids, nucleic acids. Credit will be granted for only one of CHEM 233 or CHEM 203 or CHEM 223. [3-0-0] Prerequisite: One of CHEM 123, CHEM 130, SCIE 001.",
+        "course_code": "CHEM 135",
+        "course_title": "Introductory Chemical Laboratory II",
+        "description": "An introduction to the principles and techniques of the chemistry laboratory. [0-3-0] Prerequisite: One of CHEM 111, CHEM 115, CHEM 121, CHEM 141.",
         "prerequisites": [
-            "CHEM 123"
+            "CHEM 111",
+            "CHEM 115",
+            "CHEM 121",
+            "CHEM 141"
         ],
         "corequisites": [],
         "themes": []
@@ -245,22 +255,40 @@
         "themes": []
     },
     {
-        "course_code": "CHEM 223",
-        "course_title": "Introduction to Organic Chemistry (Lecture)",
-        "description": "Structure, bonding and physical properties of aliphatic and aromatic compounds; mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-heteroatom bond formation; functional group interconversion and oxidation/reduction reactions. Only open to students in Chemistry or Biochemistry specializations. Students should consult the Credit Exclusion List for credit exclusions relating to second-year organic chemistry courses. [3-0-0] Prerequisite: One of CHEM 123, CHEM 130, SCIE 001.",
-        "prerequisites": [
-            "CHEM 123"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
         "course_code": "MICB 302",
         "course_title": "Immunology",
         "description": "Mechanisms of innate and adaptive immune responses.  Hematopoiesis, development of T and B lymphocytes, leukocyte migration, antigen processing/presentation and the major histocompatibility complex, immune responses against pathogens, and diseases associated with aberrant immune responses. [3-0-1] Prerequisite: One of MICB 212, MICB 202.",
         "prerequisites": [
             "MICB 212"
         ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "MICB 205",
+        "course_title": "Fundamental Data Science in Microbiology and Immunology",
+        "description": "Foundations in data science course that incorporates the use of biological data science tools to perform survey-level analysis of microbiology and immunology datasets. [3-0-0] Prerequisite: DSCI 100.",
+        "prerequisites": [
+            "DSCI 100"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "MICB 305",
+        "course_title": "Data Science in Microbiology and Immunology Research",
+        "description": "A team-based data science research experience in microbiology and immunology. [3-0-1] Prerequisite: MICB_V 205 and 3rd-year class standing. This course is not eligible for Credit/D/Fail grading.",
+        "prerequisites": [
+            "MICB 205"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "DSCI 100",
+        "course_title": "Introduction to Data Science",
+        "description": "Use of data science tools to summarize, visualize, and analyze data. Sensible workflows and clear interpretations are emphasized. [3-0-1] Prerequisite: MATH 12",
+        "prerequisites": [],
         "corequisites": [],
         "themes": []
     },
@@ -279,8 +307,17 @@
         "course_code": "MICB 322",
         "course_title": "Molecular Microbiology Laboratory",
         "description": "Aseptic handling and characterization of microbes, growth properties, enzyme assays, protein analysis and plasmid isolation. Restricted to students in Microbiology and Immunology specializations. [2-4-0] Prerequisites:  MICB 211 (or 201).Co-requisites:  All of BIOL 200, BIOL 201 (or BIOC 202 or 203), CHEM 233, and MICB 212 (or 202).",
-        "prerequisites": [],
-        "corequisites": [],
+        "prerequisites": [
+            "MICB 211"
+        ],
+        "corequisites": [
+            "BIOL 200",
+            "BIOL 201",
+            "BIOC 202",
+            "BIOC 203",
+            "CHEM 233",
+            "MICB 212"
+        ],
         "themes": []
     },
     {
@@ -317,26 +354,12 @@
         "themes": []
     },
     {
-        "course_code": "BIOC 303",
-        "course_title": "Molecular Biochemistry",
-        "description": "Structure, function and metabolism of lipids, steroids, amino acids and nucleotides; the biochemistry and molecular biology of replication, transcription, translation and gene regulation. For students in Biochemistry and Honours programs in other life sciences.  Credit will be granted for only one of BIOC 302 or BIOC 303. [3-0-0] Prerequisite: One of BIOC 203, BIOC 202, BIOL 201 and either (a) CHEM 213 or (b) CHEM 233.",
+        "course_code": "BIOL 335",
+        "course_title": "Molecular Genetics",
+        "description": "Isolation and identification of genes, analysis of gene structure; gene expression and its regulation in prokaryotes and in eukaryotes; developmental genetics. [3-0-2] Prerequisite: One of BIOL 233, BIOL 234, MICB 322, FRST 302.",
         "prerequisites": [
-            "BIOC 203",
-            "BIOC 202",
-            "BIOL 201",
-            "CHEM 213",
-            "CHEM 233"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "MICB 325",
-        "course_title": "Analysis of Microbial Genes and Genomes",
-        "description": "Genetic, molecular biological and bioinformatic approaches for the analysis of microbial genomes, gene structure-function and gene expression with emphasis on bacteria. [3-0-0] Prerequisite: One of MICB 211, MICB 201, BIOL 234.",
-        "prerequisites": [
-            "MICB 211",
-            "BIOL 234"
+            "BIOL 234",
+            "MICB 322"
         ],
         "corequisites": [],
         "themes": []
@@ -357,16 +380,6 @@
         "themes": []
     },
     {
-        "course_code": "BIOL 121",
-        "course_title": "Genetics, Evolution and Ecology",
-        "description": "Principles of storage and transmission of genetic variation; origin and evolution of species and their ecological interactions. Credit will be granted for only one of BIOL 121 or BIOL 344. [3-0-0] Prerequisite: One of BIOL 11, BIOL 12, BIOL 111.",
-        "prerequisites": [
-            "BIOL 111"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
         "course_code": "BIOC 302",
         "course_title": "General Biochemistry",
         "description": "Metabolic reactions of lipids, steroids, amino acids and nucleotides; the biochemistry of replication, transcription and translation. Credit will be granted for only one of BIOC 302 or BIOC 303. [3-0-1] Prerequisite: One of BIOL 201, BIOC 202, BIOC 203 and one of CHEM 203, CHEM 223, CHEM 233. Equivalency: BIOC 303",
@@ -377,17 +390,6 @@
             "CHEM 203",
             "CHEM 223",
             "CHEM 233"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "BIOL 335",
-        "course_title": "Molecular Genetics",
-        "description": "Isolation and identification of genes, analysis of gene structure; gene expression and its regulation in prokaryotes and in eukaryotes; developmental genetics. [3-0-2] Prerequisite: One of BIOL 233, BIOL 234, MICB 322, FRST 302.",
-        "prerequisites": [
-            "BIOL 234",
-            "MICB 322"
         ],
         "corequisites": [],
         "themes": []
@@ -408,10 +410,47 @@
         "themes": []
     },
     {
+        "course_code": "BIOC 303",
+        "course_title": "Molecular Biochemistry",
+        "description": "Structure, function and metabolism of lipids, steroids, amino acids and nucleotides; the biochemistry and molecular biology of replication, transcription, translation and gene regulation. For students in Biochemistry and Honours programs in other life sciences.  Credit will be granted for only one of BIOC 302 or BIOC 303. [3-0-0] Prerequisite: One of BIOC 203, BIOC 202, BIOL 201 and either (a) CHEM 213 or (b) CHEM 233.",
+        "prerequisites": [
+            "BIOC 203",
+            "BIOC 202",
+            "BIOL 201",
+            "CHEM 213",
+            "CHEM 233"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "BIOL 121",
+        "course_title": "Genetics, Evolution and Ecology",
+        "description": "Principles of storage and transmission of genetic variation; origin and evolution of species and their ecological interactions. Credit will be granted for only one of BIOL 121 or BIOL 344. [3-0-0] Prerequisite: One of BIOL 11, BIOL 12, BIOL 111.",
+        "prerequisites": [
+            "BIOL 111"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
+        "course_code": "MICB 325",
+        "course_title": "Analysis of Microbial Genes and Genomes",
+        "description": "Genetic, molecular biological and bioinformatic approaches for the analysis of microbial genomes, gene structure-function and gene expression with emphasis on bacteria. [3-0-0] Prerequisite: One of MICB 211, MICB 201, BIOL 234.",
+        "prerequisites": [
+            "MICB 211",
+            "BIOL 234"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
         "course_code": "MICB 407",
         "course_title": "Viral Infections in Humans.",
         "description": "Interactions between viruses and humans; pathogenesis; persistence and viral oncogenesis; virological diagnosis and treatment. (Consult the Credit Exclusion list within the Faculty of Science section of the Calendar.) [3-0-0] Prerequisite: MICB306",
-        "prerequisites": [],
+        "prerequisites": [
+            "MICB 206"
+        ],
         "corequisites": [],
         "themes": []
     },
@@ -469,19 +508,6 @@
         "themes": []
     },
     {
-        "course_code": "MICB 475",
-        "course_title": "Data Science Research in Microbiology and Immunology",
-        "description": "A team-based data science research experience in microbiology and immunology. [3-0-0] Prerequisite: Either (a) MICB 322 and one of MICB 325, BIOL 335;  or (b) BIOT 380.",
-        "prerequisites": [
-            "MICB 322",
-            "MICB 325",
-            "BIOL 335",
-            "BIOT 380"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
         "course_code": "MICB 498",
         "course_title": "Co-operative Work Placement III",
         "description": "Work experience.  Restricted to students admitted to the Co-operative Education Program in the Biotechnology or Microbiology and Immunology specializations. Pass/Fail This course is not eligible for Credit/D/Fail grading. Prerequisite: Either (a) MICB 399 or (b) BIOT 380. and completion of two co-op work terms.",
@@ -498,24 +524,6 @@
         "description": "Work experience in an industrial research setting, taken during the Winter Session (Term 1) of fifth year. Restricted to students admitted to the Co-operative Education Program in the Biotechnology or Microbiology and Immunology specializations. Pass/Fail This course is not eligible for Credit/D/Fail grading. Prerequisite: MICB 498.",
         "prerequisites": [
             "MICB 498"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "DSCI 100",
-        "course_title": "Introduction to Data Science",
-        "description": "Use of data science tools to summarize, visualize, and analyze data. Sensible workflows and clear interpretations are emphasized. [3-0-1] Prerequisite: MATH 12",
-        "prerequisites": [],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "MICB 205",
-        "course_title": "Fundamental Data Science in Microbiology and Immunology",
-        "description": "Foundations in data science course that incorporates the use of biological data science tools to perform survey-level analysis of microbiology and immunology datasets. [3-0-0] Prerequisite: DSCI 100.",
-        "prerequisites": [
-            "DSCI 100"
         ],
         "corequisites": [],
         "themes": []
@@ -546,6 +554,16 @@
         "themes": []
     },
     {
+        "course_code": "MICB 408",
+        "course_title": "Advanced Bacterial Pathogenesis",
+        "description": "Current and emerging themes in bacterial pathogenesis including cellular microbiology, bacterial cell biology processes and their role in virulence including secretion systems to deliver virulence factors and immune evasion strategies employed by pathogens.  Development of antibiotics and resistance to antibiotics. [3-0-0] Prerequisite: MICB 308.",
+        "prerequisites": [
+            "MICB 308"
+        ],
+        "corequisites": [],
+        "themes": []
+    },
+    {
         "course_code": "MICB 404",
         "course_title": "Topics in Molecular Bacterial Pathogenesis",
         "description": "A lecture/discussion/library research course. Topics such as antibiotic resistance, pathogen genomics; host-pathogen interactions; evolution of pathogens; host responses to infection, invasive mechanisms, resistance mechanisms. [1-0-4] Prerequisite: MICB 302 and one of MICB 308, MICB 408.",
@@ -553,16 +571,6 @@
             "MICB 302",
             "MICB 308",
             "MICB 408"
-        ],
-        "corequisites": [],
-        "themes": []
-    },
-    {
-        "course_code": "MICB 408",
-        "course_title": "Advanced Bacterial Pathogenesis",
-        "description": "Current and emerging themes in bacterial pathogenesis including cellular microbiology, bacterial cell biology processes and their role in virulence including secretion systems to deliver virulence factors and immune evasion strategies employed by pathogens.  Development of antibiotics and resistance to antibiotics. [3-0-0] Prerequisite: MICB 308.",
-        "prerequisites": [
-            "MICB 308"
         ],
         "corequisites": [],
         "themes": []
