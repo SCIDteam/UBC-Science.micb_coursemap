@@ -28,18 +28,21 @@ function init() {
         document.getElementById('core-toggle').addEventListener('change', function () {
             showCoreHighlight = this.checked;
             d3.select('svg g').remove();
+            g = createGraph(); // Add this line
             updateGraph(coursesDataGlobal);
         });
     }).catch(err => console.error('Error loading the JSON:', err));
 }
 
 function createGraph() {
-    return new dagreD3.graphlib.Graph().setGraph({
+    return new dagreD3.graphlib.Graph({compound: true}).setGraph({
         rankdir: 'TB',
         nodesep: 30,
         edgesep: 0,
-        ranksep: 200
-    });
+        ranksep: 100,
+        marginx: 20,
+        marginy: 20
+    }).setDefaultEdgeLabel(function() { return {}; });
 }
 
 function setupThemeFilters(coursesData) {
@@ -104,6 +107,7 @@ function updateGraph(coursesData) {
     const courses = document.getElementById('prerequisite-toggle').checked ? coursesData : filtered;
 
     buildGraph(courses);
+    addCustomFakeEdges();
     renderGraph(courses.map(c => c.course_code), coursesData);
 }
 
@@ -241,8 +245,9 @@ function renderGraph(courseIds, coursesData) {
             const tooltipHeight = tooltip.node().offsetHeight;
             const x = event.clientX + 10;
             const y = event.clientY + 10;
-            const xPos = x + tooltipWidth > window.innerWidth ? x - tooltipWidth - 20 : x;
-            const yPos = y + tooltipHeight > window.innerHeight ? y - tooltipHeight - 20 : y;
+            const mainRect = document.querySelector('main').getBoundingClientRect();
+            const xPos = x + tooltipWidth > mainRect.width ? x - tooltipWidth - 20 : x;
+            const yPos = y + tooltipHeight > mainRect.height ? y - tooltipHeight - 20 : y;
             tooltip.style('left', `${xPos}px`).style('top', `${yPos}px`);
         });
 
@@ -325,6 +330,8 @@ function addNodeIfNotExists(nodeId, addedNodes, themeCourses) {
     const full_course = coursesDataGlobal.find(course => course.course_code === nodeId);
     if (!addedNodes.has(nodeId) && full_course) {
         const isThemeCourse = themeCourses.some(course => course.course_code === nodeId);
+        
+        // Add the node first
         g.setNode(nodeId, {
             label: nodeId,
             id: nodeId,
@@ -340,6 +347,75 @@ function addNodeIfNotExists(nodeId, addedNodes, themeCourses) {
             rx: determineShape(full_course) === 'rect' ? 100 : null,
             ry: determineShape(full_course) === 'rect' ? 100 : null
         });
+        
+        // Get the level and create cluster if needed
+        const lastThreeChars = nodeId.slice(-3);
+        const numericValue = parseInt(lastThreeChars, 10);
+        let clusterId = null;
+        
+        if (numericValue >= 100 && numericValue <= 199) {
+            clusterId = 'cluster_1xx';
+        } else if (numericValue >= 200 && numericValue <= 299) {
+            clusterId = 'cluster_2xx';
+        } else if (numericValue >= 300 && numericValue <= 399) {
+            clusterId = 'cluster_3xx';
+        } else if (numericValue >= 400 && numericValue <= 499) {
+            clusterId = 'cluster_4xx';
+        }
+        
+        if (clusterId) {
+            // Create main cluster if it doesn't exist
+            if (!g.hasNode(clusterId)) {
+                g.setNode(clusterId, {
+                    label: '',
+                    shape: 'rect',
+                    style: 'fill: white;'
+                });
+            }
+            
+            // Check if this course belongs to a sub-cluster
+            const subClusterId = findSubCluster(nodeId, clusterId);
+            
+            if (subClusterId) {
+                const fullSubClusterId = `${clusterId}_${subClusterId}`;
+                
+                if (!g.hasNode(fullSubClusterId)) {
+                    g.setNode(fullSubClusterId, {
+                        label: '',
+                        shape: 'rect',
+                        style: 'fill: white;'
+                    });
+                    
+                    // Assign sub-cluster to main cluster
+                    g.setParent(fullSubClusterId, clusterId);
+                }
+                
+                // Check if this course belongs to a sub-sub-cluster
+                const subSubClusterId = findSubSubCluster(nodeId, clusterId, subClusterId);
+                
+                if (subSubClusterId) {
+                    const fullSubSubClusterId = `${clusterId}_${subClusterId}_${subSubClusterId}`;
+                    
+                    if (!g.hasNode(fullSubSubClusterId)) {
+                        g.setNode(fullSubSubClusterId, {
+                            label: '',
+                            shape: 'rect',
+                            style: 'fill: white;'
+                        });
+                        
+                        // Assign sub-sub-cluster to sub-cluster
+                        g.setParent(fullSubSubClusterId, fullSubClusterId);
+                    }
+                    
+                    g.setParent(nodeId, fullSubSubClusterId);
+                } else {
+                    g.setParent(nodeId, fullSubClusterId);
+                }
+            } else {
+                g.setParent(nodeId, clusterId);
+            }
+        }
+        
         addedNodes.add(nodeId);
     }
 }
@@ -361,4 +437,79 @@ function determineShape(course) {
     if (course.class_type === 'Lab') return 'diamond';
     if (course.class_type === 'Lecture') return 'rect';
     if (course.course_title.includes('Co-operative')) return 'hexagon';
+}
+
+function addCustomFakeEdges() {
+    // Array of tuples: [from_course, to_course]
+    const fakeEdges = [
+        ['DSCI 100', 'BIOL 200'], // To ensure 200 level courses are below 100 level
+        ['MICB 211', 'BIOT 380'], // To ensure 300 level courses are below 200 level
+    ];
+
+    fakeEdges.forEach(([fromCourse, toCourse]) => {
+        if (g.hasNode(fromCourse) && g.hasNode(toCourse)) {
+            if (!g.hasEdge(fromCourse, toCourse)) {
+                g.setEdge(fromCourse, toCourse, {
+                    style: 'opacity: 0; stroke: green',
+                    weight: 0.5
+                });
+            }
+        }
+    });
+}
+
+// Creating 'fake' subgroups to force nodes to be beside each other
+
+const courseGroupings = {
+    'cluster_4xx': {
+        'grouping1': {
+            courses: ['MICB 471', 'MICB 430', 'MICB 407', 'MICB 425'],
+            subgroups: {
+                'grouping2': ['MICB 407', 'MICB 425']
+            }
+        }
+    },
+
+    'cluster_3xx': {
+    },
+
+    'cluster_2xx': {
+    },
+
+    'cluster_1xx': {
+    }
+};
+
+// Unified helper function to find which grouping a course belongs to at any level
+function findGrouping(courseCode, clusterId, parentGrouping = null) {
+    if (!courseGroupings[clusterId]) {
+        return null;
+    }
+    
+    // If we're looking for a sub-sub-cluster within a specific parent grouping
+    if (parentGrouping && courseGroupings[clusterId][parentGrouping] && courseGroupings[clusterId][parentGrouping].subgroups) {
+        for (const [subGroupName, courses] of Object.entries(courseGroupings[clusterId][parentGrouping].subgroups)) {
+            if (courses.includes(courseCode)) {
+                return subGroupName;
+            }
+        }
+        return null;
+    }
+    
+    // Looking for main sub-cluster
+    for (const [groupingName, groupingData] of Object.entries(courseGroupings[clusterId])) {
+        if (groupingData.courses && groupingData.courses.includes(courseCode)) {
+            return groupingName;
+        }
+    }
+    return null;
+}
+
+// Convenience functions for backward compatibility
+function findSubCluster(courseCode, clusterId) {
+    return findGrouping(courseCode, clusterId);
+}
+
+function findSubSubCluster(courseCode, clusterId, subClusterId) {
+    return findGrouping(courseCode, clusterId, subClusterId);
 }

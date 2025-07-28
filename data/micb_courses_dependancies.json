@@ -60,7 +60,7 @@
         "corequisites": [],
         "themes": [
             "Microbiology",
-            "Climate"
+            "Environmental Microbiology"
         ],
         "class_type": "Lecture"
     },
@@ -70,8 +70,7 @@
         "description": "Fundamentals of chemical reactivity: thermodynamics; kinetics; organic chemistry, including stereochemistry; applications relevant to modern society. [3-3-0] Prerequisite: One of CHEM 111, CHEM 121, CHEM 141.",
         "prerequisites": [
             "CHEM 111",
-            "CHEM 121",
-            "CHEM 141"
+            "CHEM 121"
         ],
         "corequisites": [],
         "themes": [],
@@ -96,18 +95,9 @@
             "BIOL 112",
             "CHEM 123"
         ],
-        "corequisites": [],
-        "themes": [],
-        "class_type": null
-    },
-    {
-        "course_code": "CHEM 141",
-        "course_title": "Chemical Bonding, Molecular Structure and Properties for Lab Sciences",
-        "description": "Bonding theories, their predictions, experimental tests, and consequences regarding chemical structure and observable properties. Applications relevant to modern society are emphasized. For students interested in lab-focused sciences such as Chemistry, Physics, Biochemistry, Microbiology and related disciplines. Restricted to students in the Faculty of Science. [3-3-0] Prerequisite: One of CHEM 12, CHEM 100. Equivalency: CHEM121",
-        "prerequisites": [
-            "CHEM 100"
+        "corequisites": [
+            "CHEM 203"
         ],
-        "corequisites": [],
         "themes": [],
         "class_type": null
     },
@@ -134,8 +124,7 @@
         "description": "Biological molecules, protein structure and enzyme action, energy transfer, central metabolic pathways and their regulation. Examples drawn from plants, animals and microorganisms. (Consult the Credit Exclusion list within the Faculty of Science section of the Calendar.) Credit will be granted for only one of BIOL 201, BIOC 202, or BIOC 203. [3-0-1] Prerequisite: BIOL 200 and one of CHEM 233, CHEM 260. ; or BIOL 200 and a corequisite of CHEM 213; or a corequisite of either CHEM 313 or CHEM 330.",
         "prerequisites": [
             "BIOL 200",
-            "CHEM 233",
-            "CHEM 260"
+            "CHEM 233"
         ],
         "corequisites": [],
         "themes": [],
@@ -147,34 +136,8 @@
         "description": "Amino acids and proteins. Enzymes and enzymology. Human metabolic pathways. Structure, function and metabolism of carbohydrates including glycogen storage and gluconeogenesis. Restricted to students in Biochemistry specializations. Credit will be granted for only one of BIOC 202, BIOC 203 or BIOL 201. [3-0-1] Prerequisite: BIOL 200 and one of CHEM 203, CHEM 223. Corequisite: CHEM 213.",
         "prerequisites": [
             "BIOL 200",
-            "CHEM 203",
-            "CHEM 223"
+            "CHEM 203"
         ],
-        "corequisites": [
-            "CHEM 213"
-        ],
-        "themes": [],
-        "class_type": null
-    },
-    {
-        "course_code": "CHEM 135",
-        "course_title": "Introductory Chemical Laboratory II",
-        "description": "An introduction to the principles and techniques of the chemistry laboratory. [0-3-0] Prerequisite: One of CHEM 111, CHEM 115, CHEM 121, CHEM 141.",
-        "prerequisites": [
-            "CHEM 111",
-            "CHEM 115",
-            "CHEM 121",
-            "CHEM 141"
-        ],
-        "corequisites": [],
-        "themes": [],
-        "class_type": null
-    },
-    {
-        "course_code": "CHEM 115",
-        "course_title": "Introductory Chemical Laboratory I",
-        "description": "An introduction to the principles and techniques of the chemistry laboratory. [0-3-0] Prerequisite: One of CHEM 110, CHEM 120.",
-        "prerequisites": [],
         "corequisites": [],
         "themes": [],
         "class_type": null
@@ -185,20 +148,6 @@
         "description": "Introduction to proteins and enzymes, carbohydrate metabolism, and glucose homeostasis. The course emphasis is on human biochemistry and it is designed for students going into health science fields. Credit will be granted for only one of BIOC 202, BIOC 203 or BIOL 201. [3-0-0] Prerequisite: One of CHEM 203, CHEM 223, CHEM 233.",
         "prerequisites": [
             "CHEM 203",
-            "CHEM 223",
-            "CHEM 233"
-        ],
-        "corequisites": [],
-        "themes": [],
-        "class_type": null
-    },
-    {
-        "course_code": "CHEM 213",
-        "course_title": "Organic Chemistry",
-        "description": "Spectroscopy of organic compounds.  Mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-carbon bond formation; functional group interconversion.  Preference will be given to students in Chemistry or Biochemistry specializations. [3-0-0] Prerequisite: Either (a) one of CHEM 203, CHEM 223 or (b) a score of 76% or higher in CHEM 233.",
-        "prerequisites": [
-            "CHEM 203",
-            "CHEM 223",
             "CHEM 233"
         ],
         "corequisites": [],
@@ -228,29 +177,16 @@
         "corequisites": [],
         "themes": [
             "Microbiology",
-            "Climate"
+            "Environmental Microbiology"
         ],
         "class_type": "Lecture"
-    },
-    {
-        "course_code": "CHEM 260",
-        "course_title": "Organic Chemistry for Engineers",
-        "description": "A description of the properties and reactions of organic compounds. [3-0-0] Prerequisite: One of CHEM 123, CHEM 130, CHEM 154, SCIE 001.",
-        "prerequisites": [
-            "CHEM 123",
-            "CHEM 154"
-        ],
-        "corequisites": [],
-        "themes": [],
-        "class_type": null
     },
     {
         "course_code": "CHEM 203",
         "course_title": "Introduction to Organic Chemistry",
         "description": "Structure, bonding and physical properties of aliphatic and aromatic compounds; mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-heteroatom bond formation; functional group interconversion and oxidation/reduction reactions. Only open to students in Chemistry or Biochemistry specializations. Credit will be granted for only one of CHEM 203 or CHEM 223, CHEM 225 or CHEM 233, 235. [3-3-0] Prerequisite: Either (a) CHEM 123 or (b) all of CHEM 130, CHEM 135 or (c) SCIE 001.",
         "prerequisites": [
-            "CHEM 123",
-            "CHEM 135"
+            "CHEM 123"
         ],
         "corequisites": [],
         "themes": [],
@@ -260,26 +196,6 @@
         "course_code": "CHEM 233",
         "course_title": "Organic Chemistry for the Biological Sciences",
         "description": "Reactions and properties of carbonyl compounds, carbohydrates, amino acids, nucleic acids. Credit will be granted for only one of CHEM 233 or CHEM 203 or CHEM 223. [3-0-0] Prerequisite: One of CHEM 123, CHEM 130, SCIE 001.",
-        "prerequisites": [
-            "CHEM 123"
-        ],
-        "corequisites": [],
-        "themes": [],
-        "class_type": null
-    },
-    {
-        "course_code": "CHEM 154",
-        "course_title": "Chemistry for Engineering",
-        "description": "Chemical bonding, properties of matter. Chemical thermodynamics with applications to phase equilibria, aqueous equilibria and electrochemistry. Processes at surfaces. [3-3*-0] Prerequisite: CHEM 12.",
-        "prerequisites": [],
-        "corequisites": [],
-        "themes": [],
-        "class_type": null
-    },
-    {
-        "course_code": "CHEM 223",
-        "course_title": "Introduction to Organic Chemistry (Lecture)",
-        "description": "Structure, bonding and physical properties of aliphatic and aromatic compounds; mechanistic analysis of chemical reactivity of common functional groups with a focus on carbon-heteroatom bond formation; functional group interconversion and oxidation/reduction reactions. Only open to students in Chemistry or Biochemistry specializations. Students should consult the Credit Exclusion List for credit exclusions relating to second-year organic chemistry courses. [3-0-0] Prerequisite: One of CHEM 123, CHEM 130, SCIE 001.",
         "prerequisites": [
             "CHEM 123"
         ],
@@ -322,7 +238,8 @@
         ],
         "corequisites": [],
         "themes": [
-            "Virology"
+            "Virology",
+            "Human Health"
         ],
         "class_type": "Lecture"
     },
@@ -394,7 +311,6 @@
             "BIOC 203",
             "BIOC 202",
             "BIOL 201",
-            "CHEM 213",
             "CHEM 233"
         ],
         "corequisites": [],
@@ -424,7 +340,6 @@
             "BIOL 112",
             "BIOL 121",
             "CHEM 203",
-            "CHEM 223",
             "BIOL 112",
             "BIOL 121"
         ],
@@ -452,7 +367,6 @@
             "BIOC 202",
             "BIOC 203",
             "CHEM 203",
-            "CHEM 223",
             "CHEM 233"
         ],
         "corequisites": [],
