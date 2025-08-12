@@ -60,7 +60,8 @@
         "corequisites": [],
         "themes": [
             "Microbiology",
-            "Environmental Microbiology"
+            "Environmental Microbiology",
+            "Human Health"
         ],
         "class_type": "Lecture"
     },
@@ -113,7 +114,6 @@
         "themes": [
             "Virology",
             "Immunology",
-            "Science and Society",
             "Human Health"
         ],
         "class_type": "Lecture"
@@ -220,12 +220,15 @@
     {
         "course_code": "MICB 305",
         "course_title": "Data Science in Microbiology and Immunology Research",
-        "description": "A team-based data science research experience in microbiology and immunology. [3-0-1] Prerequisite: MICB_V 205 and 3rd-year class standing. This course is not eligible for Credit/D/Fail grading.",
+        "description": "A team-based data science research experience in microbiology and immunology. [3-0-1] Prerequisite: MICB_V 205 and 3rd-year class standing. MICB 305 replaces MICB 475 effective 2026W.",
         "prerequisites": [
             "MICB 205"
         ],
         "corequisites": [],
-        "themes": [],
+        "themes": [
+            "Data Science",
+            "Environmental Microbiology"
+        ],
         "class_type": "Lecture"
     },
     {
@@ -259,8 +262,8 @@
             "MICB 212"
         ],
         "themes": [
-            "Data Science",
-            "Microbiology"
+            "Microbiology",
+            "Environmental Microbiology"
         ],
         "class_type": "Lab"
     },
@@ -440,7 +443,6 @@
         ],
         "corequisites": [],
         "themes": [
-            "Data Science",
             "Immunology"
         ],
         "class_type": "Lab"
@@ -459,7 +461,9 @@
             "Data Science",
             "Microbiology",
             "Virology",
-            "Immunology"
+            "Immunology",
+            "Environmental Microbiology",
+            "Human Health"
         ],
         "class_type": "Lab"
     },
@@ -477,7 +481,9 @@
             "Data Science",
             "Microbiology",
             "Virology",
-            "Immunology"
+            "Immunology",
+            "Environmental Microbiology",
+            "Human Health"
         ],
         "class_type": "Lab"
     },
@@ -492,7 +498,11 @@
         "corequisites": [],
         "themes": [
             "Data Science",
-            "Microbiology"
+            "Microbiology",
+            "Environmental Microbiology",
+            "Human Health",
+            "Virology",
+            "Immunology"
         ],
         "class_type": "Lab"
     },
@@ -649,8 +659,7 @@
             "BIOT 380"
         ],
         "themes": [
-            "Microbiology",
-            "Science and Society"
+            "Microbiology"
         ],
         "class_type": "Lecture"
     },
@@ -666,7 +675,8 @@
         "corequisites": [],
         "themes": [
             "Data Science",
-            "Microbiology"
+            "Microbiology",
+            "Environmental Microbiology"
         ],
         "class_type": "Lecture"
     }

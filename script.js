@@ -233,7 +233,7 @@ function renderGraph(courseIds, coursesData) {
                     inner.select(`g.edgePath[id*="${coreq}-${d}"]`).style('opacity', 1)
                         .select('path')
                         .style('stroke-width', '3px')
-                        .style('stroke', 'coral')
+                        .style('stroke', 'black')
                         .style('stroke-dasharray', '5, 5');
                 });
             }
@@ -317,7 +317,7 @@ function renderGraph(courseIds, coursesData) {
                     inner.select(`g.edgePath[id*="${coreq}-${d}"]`).style('opacity', 1)
                         .select('path')
                         .style('stroke-width', '1.5px')
-                        .style('stroke', 'coral')
+                        .style('stroke', 'black')
                         .style('stroke-dasharray', '5, 5');
                 });
             }
