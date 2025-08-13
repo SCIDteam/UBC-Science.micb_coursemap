@@ -1,7 +1,7 @@
 /* Header styles */
 .header {
   grid-column: 1 / -1;
-  background-color: #2c3e50;
+  background-color: #386cb0;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -21,7 +21,7 @@
 /* Footer styles */
 .footer {
   grid-column: 1 / -1;
-  background-color: #2c3e50;
+  background-color: #386cb0;
   box-sizing: border-box;
   color: white;
   text-align: center;
@@ -70,12 +70,12 @@
   );
 }
 
-.micb { background-color: #EEDFCC; }
-.non-micb { background-color: #f0f0f0; }
-.selected-theme { background-color: #9966cc; }
-.prerequisite { background-color: cyan; }
-.corequisite { background-color: coral; }
-.required-course { background-color: #ffcc00; }
+.micb { background-color: #FDC086; }
+.non-micb { background-color: #f2f2f2; }
+.selected-theme { background-color: #beaed4; }
+.prerequisite { background-color: #7fc97f; }
+.corequisite { background-color: #ff7f00; }
+.required-course { background-color: #ffff99; }
 
 .legend-item span {
   font-size: 0.8rem;

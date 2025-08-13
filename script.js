@@ -176,35 +176,36 @@ function renderGraph(courseIds, coursesData) {
         .attr('class', 'tooltip')
         .style('opacity', 0);
 
-    const styleTooltip = (name, description) => `<p>${name}</p><p>${description}</p>`;
+    const styleTooltip = (name, description) => `<strong><p style = "margin-bottom: 5px;">${name}</p></strong><p>${description}</p>`;
 
     inner.selectAll('g.node')
         .on('mouseover', function (event, d) {
             const course = coursesData.find(c => c.course_code === d);
+            console.log(course.themes)
             tooltip.transition().duration(10).style('opacity', 1);
             tooltip.html(`
                 <div class="title">${course.course_code}</div>
                 <div class="body">${styleTooltip(course.course_title, course.description)}</div>
-                <div class='theme-footer'>Themes: ${course.themes}</div>
+                <div class='theme-footer'><strong>Themes:</strong> ${course.themes.join(', ')}</div>
             `);
 
             d3.select(this).select('rect, circle, diamond').style('fill', () => {
                 if (selectedThemes.size === 0) {
                     if (showCoreHighlight && coreCourses.has(course.course_code)) {
-                        return '#ffcc00';
+                        return '#ffff99';
                     }
-                    return d.startsWith('MICB') ? '#EEDFCC' : '#f0f0f0';
+                    return d.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
                 }
 
                 const currentCourse = coursesData.find(c => c.course_code === d);
                 const hasSelected = currentCourse && currentCourse.themes.some(t => selectedThemes.has(t));
                 if (hasSelected) {
-                    return '#9966cc';
+                    return '#beaed4';
                 }
                 if (showCoreHighlight && coreCourses.has(d)) {
-                    return '#ffcc00';
+                    return '#ffff99';
                 }
-                return d.startsWith('MICB') ? '#EEDFCC' : '#f0f0f0';
+                return d.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
             });
 
             d3.select(this).select('text').style('font-weight', 'bold');
@@ -215,7 +216,7 @@ function renderGraph(courseIds, coursesData) {
 
             if (course && course.prerequisites.length > 0) {
                 course.prerequisites.forEach(prereq => {
-                    inner.select(`g.node[id="${prereq}"]`).select('rect, circle, polygon').style('fill', 'cyan');
+                    inner.select(`g.node[id="${prereq}"]`).select('rect, circle, polygon').style('fill', '#7fc97f');
                     inner.select(`g.node[id="${prereq}"]`).select('text').style('font-weight', 'bold');
                     inner.select(`g.node[id="${prereq}"]`).style('opacity', 1);
                     inner.select(`g.edgePath[id*="${prereq}-${d}"]`).style('opacity', 1)
@@ -227,7 +228,7 @@ function renderGraph(courseIds, coursesData) {
 
             if (course && course.corequisites.length > 0) {
                 course.corequisites.forEach(coreq => {
-                    inner.select(`g.node[id="${coreq}"]`).select('rect, circle, polygon').style('fill', 'coral');
+                    inner.select(`g.node[id="${coreq}"]`).select('rect, circle, polygon').style('fill', '#ff7f00');
                     inner.select(`g.node[id="${coreq}"]`).select('text').style('font-weight', 'bold');
                     inner.select(`g.node[id="${coreq}"]`).style('opacity', 1);
                     inner.select(`g.edgePath[id*="${coreq}-${d}"]`).style('opacity', 1)
@@ -257,9 +258,9 @@ function renderGraph(courseIds, coursesData) {
             d3.select(this).select('rect, circle, diamond').style('fill', function () {
                 if (selectedThemes.size === 0) {
                     if (showCoreHighlight && coreCourses.has(course.course_code)) {
-                        return '#ffcc00';
+                        return '#ffff99';
                     }
-                    return d.startsWith('MICB') ? '#EEDFCC' : '#f0f0f0';
+                    return d.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
                 }
                 return d3.select(this).style('fill');
             });
@@ -274,19 +275,19 @@ function renderGraph(courseIds, coursesData) {
                     inner.select(`g.node[id="${prereq}"]`).select('rect, circle, polygon').style('fill', function () {
                         if (selectedThemes.size === 0) {
                             if (showCoreHighlight && coreCourses.has(prereq)) {
-                                return '#ffcc00';
+                                return '#ffff99';
                             }
-                            return prereq.startsWith('MICB') ? '#EEDFCC' : '#f0f0f0';
+                            return prereq.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
                         }
                         const prereqCourse = coursesData.find(c => c.course_code === prereq);
                         const hasSelected = prereqCourse && prereqCourse.themes.some(t => selectedThemes.has(t));
                         if (hasSelected) {
-                            return '#9966cc';
+                            return '#beaed4';
                         }
                         if (showCoreHighlight && coreCourses.has(prereq)) {
-                            return '#ffcc00';
+                            return '#ffff99';
                         }
-                        return prereq.startsWith('MICB') ? '#EEDFCC' : '#f0f0f0';
+                        return prereq.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
                     });
                     inner.select(`g.node[id="${prereq}"]`).select('text').style('font-weight', null);
                     inner.select(`g.edgePath[id*="${prereq}-${d}"]`).style('opacity', 1)
@@ -299,19 +300,19 @@ function renderGraph(courseIds, coursesData) {
                     inner.select(`g.node[id="${coreq}"]`).select('rect, circle, polygon').style('fill', function () {
                         if (selectedThemes.size === 0) {
                             if (showCoreHighlight && coreCourses.has(coreq)) {
-                                return '#ffcc00';
+                                return '#ffff99';
                             }
-                            return d.startsWith('MICB') ? '#EEDFCC' : '#f0f0f0';
+                            return d.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
                         }
                         const coreqCourse = coursesData.find(c => c.course_code === coreq);
                         const hasSelected = coreqCourse && coreqCourse.themes.some(t => selectedThemes.has(t));
                         if (hasSelected) {
-                            return '#9966cc';
+                            return '#beaed4';
                         }
                         if (showCoreHighlight && coreCourses.has(coreq)) {
-                            return '#ffcc00';
+                            return '#ffff99';
                         }
-                        return coreq.startsWith('MICB') ? '#EEDFCC' : '#f0f0f0';
+                        return coreq.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
                     });
                     inner.select(`g.node[id="${coreq}"]`).select('text').style('font-weight', null);
                     inner.select(`g.edgePath[id*="${coreq}-${d}"]`).style('opacity', 1)
@@ -335,10 +336,10 @@ function addNodeIfNotExists(nodeId, addedNodes, themeCourses) {
             id: nodeId,
             shape: determineShape(full_course),
             style: isThemeCourse
-                ? 'fill: #9966cc'
+                ? 'fill: #beaed4'
                 : (showCoreHighlight && coreCourses.has(nodeId)
-                    ? 'fill: #ffcc00;'
-                    : (nodeId.startsWith('MICB') ? 'fill: #EEDFCC;' : 'fill: #f0f0f0;')),
+                    ? 'fill: #ffff99;'
+                    : (nodeId.startsWith('MICB') ? 'fill: #FDC086;' : 'fill: #f2f2f2;')),
             labelStyle: 'fill: black;',
             width: 100,
             height: 50,
