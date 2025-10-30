@@ -621,7 +621,8 @@
         "course_title": "Topics in Immunological Research",
         "description": "Presentations, library research, paper reviews and class discussion on selected areas of advanced molecular and cellular immunological research. [1-0-4] Prerequisite: [MICB302] AND [MICB402, MEDG410]",
         "prerequisites": [
-            "MICB 302"
+            "MICB 302",
+            "MICB 402"
         ],
         "corequisites": [],
         "themes": [

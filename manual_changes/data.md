@@ -26,4 +26,5 @@ Note: Also removed as prerequisite from courses to prevent errors in script.
 ### Others
 
 - Added CHEM 203 as prerequisite to BIOL 200 (Not identified by code).
+- Added MICB 402 as prerequisite to MICB 412 (Not identified by code).
 - Created fake subclusters (see code) to force certain nodes to be placed together (based on feedback).
