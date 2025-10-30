@@ -181,7 +181,6 @@ function renderGraph(courseIds, coursesData) {
     inner.selectAll('g.node')
         .on('mouseover', function (event, d) {
             const course = coursesData.find(c => c.course_code === d);
-            console.log(course.themes)
             tooltip.transition().duration(10).style('opacity', 1);
             tooltip.html(`
                 <div class="title">${course.course_code}</div>
@@ -302,7 +301,7 @@ function renderGraph(courseIds, coursesData) {
                             if (showCoreHighlight && coreCourses.has(coreq)) {
                                 return '#ffff99';
                             }
-                            return d.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
+                            return coreq.startsWith('MICB') ? '#FDC086' : '#f2f2f2';
                         }
                         const coreqCourse = coursesData.find(c => c.course_code === coreq);
                         const hasSelected = coreqCourse && coreqCourse.themes.some(t => selectedThemes.has(t));
